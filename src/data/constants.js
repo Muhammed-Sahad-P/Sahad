@@ -27,7 +27,7 @@ export const skills = [
 
       {
         name: "MongoDB",
-        image: "mongodb.png",
+        image: "mongodb.svg",
       },
       {
         name: "Express Js",
@@ -35,15 +35,15 @@ export const skills = [
       },
       {
         name: "React Js",
-        image: "react.png",
+        image: "react.webp",
       },
       {
         name: "Node Js",
-        image: "nodejs-logo.svg",
+        image: "node.png",
       },
       {
         name: "Redux",
-        image: "redux.png",
+        image: "redux.svg",
       },
       {
         name: "Next Js",
@@ -63,7 +63,7 @@ export const skills = [
       },
       {
         name: "Tailwind",
-        image: "tailwind-css.png",
+        image: "tailwind.svg",
       },
       {
         name: "Git",
@@ -71,7 +71,7 @@ export const skills = [
       },
       {
         name: "GitHub",
-        image: "GitHub-logo.png",
+        image: "Github.png",
       },
       {
         name: "VS Code",
