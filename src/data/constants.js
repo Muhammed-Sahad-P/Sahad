@@ -4,8 +4,7 @@ export const Bio = {
   description:
     "I'm a passionate developer focused on building scalable applications.",
   github: "https://github.com/Muhammed-Sahad-P",
-  resume:
-    "/resume.pdf",
+  resume: "/resume.pdf",
   linkedin: "https://www.linkedin.com/in/muhammed-sahad-p/",
 };
 
@@ -158,9 +157,10 @@ export const projects = [
     descriptionPoints: [
       "DOQUE is a task management app designed to boost team productivity and streamline workflows.",
       "Features include customizable workspaces with drag-and-drop task management, real-time chat, and member management.",
-      "A user-friendly dashboard tracks project progress, while email OTP verification ensures secure onboarding.",
-      "Added dark mode for better usability in low-light environments and integrated Cloudinary for efficient media uploads.",
-      "Technologies: Next.js, TypeScript, Tailwind CSS, Vercel, Cloudinary.",
+      "A user-friendly dashboard tracks project progress, and email OTP verification ensures secure onboarding.",
+      "Dark mode enhances usability in low-light environments, while Cloudinary integration supports efficient media uploads.",
+      "Payment workflows are powered by Stripe, and the backend features robust error handling, JWT authentication, and secure APIs.",
+      "Technologies: Next.js, TypeScript, Tailwind CSS, Node.js, Express.js, MongoDB, Vercel, Cloudinary, Stripe, Nodemailer.",
     ],
     shortDesc:
       "A cutting-edge task management application designed to enhance team productivity and streamline project workflows.",
@@ -169,6 +169,9 @@ export const projects = [
       "NextJS",
       "TypeScript",
       "TailwindCSS",
+      "NodeJS",
+      "ExpressJS",
+      "MongoDB",
       "Cloudinary",
       "Figma",
       "Vercel",

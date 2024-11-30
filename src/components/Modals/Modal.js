@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import styled from "styled-components";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -30,6 +30,7 @@ const CloseIcon = styled(AiOutlineClose)`
   right: 20px;
   font-size: 24px;
   cursor: pointer;
+  color: ${({ theme }) => theme.text_primary};
 `;
 
 const Title = styled.h2`
@@ -73,18 +74,19 @@ const Tag = styled.span`
 `;
 
 const Modal = ({ project, onClose }) => {
-  const handleOutsideClick = (e) => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleOutsideClick = useCallback((e) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
-  };
+  });
 
   useEffect(() => {
     window.addEventListener("click", handleOutsideClick);
     return () => {
       window.removeEventListener("click", handleOutsideClick);
     };
-  }, [onClose]);
+  }, [onClose, handleOutsideClick]);
 
   return (
     <ModalOverlay onClick={handleOutsideClick}>
