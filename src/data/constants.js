@@ -4,7 +4,7 @@ export const Bio = {
   description:
     "I'm a passionate developer focused on building scalable applications.",
   github: "https://github.com/Muhammed-Sahad-P",
-  resume: "/resume.pdf",
+  resume: "/MuhammedSahadResume.pdf",
   linkedin: "https://www.linkedin.com/in/muhammed-sahad-p/",
 };
 
