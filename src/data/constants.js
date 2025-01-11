@@ -180,6 +180,34 @@ export const projects = [
     github: "https://github.com/Muhammed-Sahad-P/project-doque",
     webapp: "https://doque.vercel.app",
   },
+
+  {
+    id: 11,
+    title: "Pinterest-Clone",
+    descriptionPoints: [
+      "Pinterest Clone is a visually appealing platform where users can explore, create, and organize pins into customizable boards.",
+      "Key features include user authentication, pin creation, saving, liking, commenting.",
+      " Users can like pins to increase their like count, contributing to user engagement metrics.",
+      " Built with a modern stack including Next.js, TypeScript, Redux, Node.js, and MongoDB, the application delivers efficient performance and scalability.",
+      " Styled with Tailwind CSS, it offers an intuitive and user-friendly interface, making idea-sharing seamless and enjoyable.",
+    ],
+    shortDesc:
+      "A responsive web application that replicates the popular social media platform, Pinterest.",
+    image: "pinterest.png",
+    tags: [
+      "NextJS",
+      "TypeScript",
+      "MongoDB",
+      "ExpressJS",
+      "NodeJS",
+      "TailwindCSS",
+      "Vercel",
+      "Render",
+    ],
+    category: "web app",
+    github: "https://github.com/Muhammed-Sahad-P/Pinterest-Clone",
+    webapp: "https://pinterest-clone-sahad.vercel.app",
+  },
 ];
 
 export const TimeLineData = [
