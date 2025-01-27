@@ -153,8 +153,9 @@ export const Description = styled.div`
   }
 `;
 
-const ResumeButton = styled.a`
+export const ResumeButton = styled.a`
   display: inline-block;
+  cursor: pointer;
   padding: 12px 24px;
   font-size: 18px;
   font-weight: 600;
@@ -226,7 +227,7 @@ const Hero = () => {
 
             <ResumeButton
               href={Bio.resume}
-              download="Muhammed-Sahad-Resume.pdf"
+              download="MUHAMMED-SAHAD-P-Mern.pdf"
             >
               Download Resume
             </ResumeButton>

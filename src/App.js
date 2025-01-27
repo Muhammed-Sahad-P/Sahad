@@ -11,6 +11,7 @@ import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Experience from "./components/Experience";
+import ContactForm from "./components/Message";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -45,6 +46,7 @@ function App() {
             <Projects />
             <Experience />
             <Education />
+            <ContactForm />
           </Wrapper>
 
           <Footer />
