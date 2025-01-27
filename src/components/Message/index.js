@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Container = styled.div`
   background: linear-gradient(
@@ -16,10 +18,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  z-index: 5;
   align-items: center;
-  padding: 40px 20px;
-  @media (max-width: 768px) {
-    padding: 20px 10px;
+  padding: 40px 0px 80px 0px;
+  @media (max-width: 960px) {
+    padding: 20px 0;
   }
 `;
 
@@ -85,6 +89,52 @@ const StyledForm = styled.form`
   @media (max-width: 768px) {
     padding: 20px;
     gap: 16px;
+  }
+`;
+
+const CustomToastContainer = styled(ToastContainer)`
+  .Toastify__toast {
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 12px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .Toastify__toast--success {
+    background: linear-gradient(
+        38.73deg,
+        rgba(204, 0, 187, 0.15) 0%,
+        rgba(201, 32, 184, 0) 50%
+      ),
+      linear-gradient(
+        141.27deg,
+        rgba(0, 70, 209, 0) 50%,
+        rgba(0, 70, 209, 0.15) 100%
+      );
+    color: white;
+  }
+
+  .Toastify__toast--error {
+    background-color: #f44336;
+    color: white;
+  }
+
+  .Toastify__toast--info {
+    background-color: #2196f3;
+    color: white;
+  }
+
+  .Toastify__toast--warning {
+    background-color: #ff9800;
+    color: white;
+  }
+
+  .Toastify__toast-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 
@@ -191,11 +241,13 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (formData.name && formData.email && formData.message) {
-      alert("Message Sent Successfully!");
+      console.log("Form Data:", formData);
+      toast.success("Message Sent Successfully!");
       setFormData({ name: "", email: "", phone: "", message: "" });
     } else {
-      alert("Please fill in all fields.");
+      toast.error("Please fill in all fields.");
     }
   };
 
@@ -230,6 +282,7 @@ const ContactForm = () => {
             placeholder="Phone Number"
             value={formData.phone}
             onChange={handleChange}
+            required
           />
           <TextArea
             name="message"
@@ -242,6 +295,18 @@ const ContactForm = () => {
           <SubmitButton type="submit">Send Message</SubmitButton>
         </StyledForm>
       </Wrapper>
+      <CustomToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </Container>
   );
 };
