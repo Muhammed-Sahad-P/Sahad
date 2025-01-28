@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import emailjs from "@emailjs/browser";
 
 const Container = styled.div`
   background: linear-gradient(
@@ -241,13 +242,36 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const serviceID = "service_2gj7qk5";
+    const templateID = "template_zgikncf";
+    const publicKey = "1wc00cW7WhwFxJxs-";
 
     if (formData.name && formData.email && formData.message) {
-      console.log("Form Data:", formData);
-      toast.success("Message Sent Successfully!");
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      emailjs
+        .send(
+          serviceID,
+          templateID,
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+          },
+          publicKey
+        )
+        .then(
+          (response) => {
+            console.log("SUCCESS!", response.status, response.text);
+            toast.success("Message Sent Successfully!");
+            setFormData({ name: "", email: "", phone: "", message: "" });
+          },
+          (error) => {
+            console.error("FAILED...", error);
+            toast.error("Failed to send the message. Please try again.");
+          }
+        );
     } else {
-      toast.error("Please fill in all fields.");
+      toast.error("Please fill in all required fields.");
     }
   };
 
